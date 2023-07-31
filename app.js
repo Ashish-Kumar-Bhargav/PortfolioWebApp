@@ -2,11 +2,15 @@ const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
 const nodemailer = require('nodemailer');
+const dotenv = require('dotenv'); // Add this line to import dotenv
+
+// Load environment variables from .env file
+dotenv.config();
 
 const app = express();
 const port = 8000;
 
-mongoose.connect('mongodb+srv://ashishbhargav11072003:1kpAfWRwSZ72RjdK@bhargav.bdbchg6.mongodb.net/Portfolio', {
+mongoose.connect(process.env.MONGO, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
@@ -17,6 +21,8 @@ mongoose.connect('mongodb+srv://ashishbhargav11072003:1kpAfWRwSZ72RjdK@bhargav.b
     console.error('Error connecting to MongoDB:', err.message);
   });
 
+
+  
 const contactSchema = new mongoose.Schema({
   name: { type: String, required: true },
   email: { type: String, required: true },
