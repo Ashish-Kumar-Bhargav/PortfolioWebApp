@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "express": "^4.18.2",
-    "mongoose": "^7.4.1",
+    "mongoose": "^6.10.1",
     "mysql": "^2.18.1",
     "nodemailer": "^6.9.3",
     "toastify-js": "^1.12.0"
